@@ -1,0 +1,151 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Kavivanar', cursive;
+  background: #7fb2c8 url('/public/images/back.png') bottom left repeat-x;
+  min-height: 100vh;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+li img {
+  vertical-align: middle;
+}
+.play-screen {
+  padding: 80px 10px 10px 10px;
+}
+.enemy-details {
+  border: 3px solid black;
+  height: 150px;
+  background-color: #ddd;
+}
+.enemy-image {
+  float:right;
+  width: 100px;
+  height: 150px;
+  border-left: 3px solid black;
+}
+.enemy-name,
+.enemy-stats {
+  margin: 10px;
+}
+li {
+  display: inline;
+  padding-right: 10px;
+}
+.player-details {
+  border: 3px solid black;
+  border-width: 0 3px 3px 3px;
+  display: block;
+  height: 70px;
+  background-color: #ddd;
+}
+.player-image  {
+  border-right: 3px solid black;
+  float: left;
+  margin-right: 10px;
+  width: 60px;
+  height: 70px;
+}
+.player-cards {
+  display: flex;
+  flex-direciton: row;
+}
+.actionDetails {
+  position: fixed;
+  top: 0;
+  z-index:2;
+  height: 2em;
+  width: 100%;
+}
+.card {
+  border: 3px solid black;
+  opacity: 0.6;
+  display:inline-block;
+  margin: 10px 5px 10px 0px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+.card.hidden,
+.card.hidden:hover {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+h2.card-name {
+  font-size: 16px;
+  margin-top: 0;
+  font-weight: bold;
+}
+.card:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+.action-details {
+}
+.action-message {
+  border: 3px solid black;
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 10px;
+  margin: 10px 10%;
+}
+.end-screen {
+  background-color: #000;
+  min-height: 100vh;
+}
+.player-lost,
+.player-won {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}
+.player-lost {
+  color: red;
+}
+.player-won {
+  color: green;
+  font-size: 33px;
+}
+.icon {
+  height: 14px;
+  width: 14px;
+}
+
+@media (min-width: 600px) {
+  .enemy-details {
+    background-color: transparent;
+    border: none;
+  }
+  .enemy-image {
+    border: none;
+    height: 250px;
+    width: 200px;
+    margin-top: -50px;
+  }
+  .enemy-name,
+  .enemy-stats {
+    text-align: right;
+  }
+  .player-details {
+    border-width: 0;
+    background-color: transparent;
+    padding: 10px;
+    width: 100px;
+  }
+  .player-image {
+    height: 100px;
+    width: 70px;
+    border-right: none;
+    margin-top: -100px;
+  }
+  .player-stats {
+    width: 140px;
+  }
+}

@@ -1,8 +1,6 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Kavivanar', cursive;
-  background: #7fb2c8 url('/public/images/back.png') bottom left repeat-x;
   min-height: 100vh;
 }
 ul {
@@ -125,8 +123,8 @@ h2.card-name {
   }
   .enemy-image {
     border: none;
-    height: 250px;
-    width: 200px;
+    height: 300px;
+    width: 300px;
     margin-top: -50px;
   }
   .enemy-name,

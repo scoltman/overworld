@@ -11,15 +11,7 @@ It's early days, but anyone is welcome to jump on board.
 
 I want to keep it single player for now, with the potential that people could take it an easily role their own game using this structure.
 
-image assets are temporarily taken from existentialcomics.com until I have something better.
-
-
 ## Running it
 
 * yarn install
 * yarn start
-
-
-## screenshot
-
-![Alt text](/../master/game-ui-2017.png?raw=true "Screenshot")

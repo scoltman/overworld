@@ -14,4 +14,11 @@ I want to keep it single player for now, with the potential that people could ta
 ## Running it
 
 * yarn install
-* yarn start
+* yarn dev
+
+# alternatively
+
+* ./dev.sh ~ will run webpack dev server in docker (with yarn cache)
+* docker build --target=builder -t overworld ~ will bundle files in node
+* docker build -t overworld ~ will bundle in node but move to a nginx env
+* docker run overworld ~ will spin up container

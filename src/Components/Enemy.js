@@ -5,7 +5,6 @@ class Enemy extends Component {
   render() {
     return (
       <div className="enemy-details">
-        <img className="enemy-image" src="/public/images/enemy.gif" alt="{this.props.enemy.name}" />
         <h2 className="enemy-name">
           {this.props.enemy.name}
         </h2>

@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "webpack-dev-server --host=0.0.0.0",
-    "build": "webpack"
+    "build": "webpack",
+    "watch": "webpack --watch --watch-polling"
   },
   "dependencies": {
     "babel-eslint": "^8.2.1",

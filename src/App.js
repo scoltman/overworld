@@ -18,7 +18,7 @@ class App extends Component {
       discard: [],
       player: {},
       currentEnemy: {
-        name: 'Søren Kierkegaard',
+        name: 'Bad Guy',
         health: 10,
         energy: 200,
         recurringDamage: 0,
@@ -44,7 +44,7 @@ class App extends Component {
         ]
       },
       enemies: []
-    }
+    };
   }
   componentWillMount() {
     this.setState({player :
@@ -181,7 +181,6 @@ class App extends Component {
          }
       }
     } else {
-      setTimeout(() => {
         this.setState({currentAction: ''});
         // apply recurring player damage
         let player = Object.assign({}, this.state.player);
@@ -189,9 +188,10 @@ class App extends Component {
 
         if(player.health <= 0){
           // game state player has died
-          this.setState({player: player});
-          this.setState({endMessage : 'You have died!'});
-          this.setState({status : 'lost'});
+          this.setState({
+            player: player,
+            endMessage : 'You have died!',
+            status : 'lost'});
 
         } else {
           //  attack player
@@ -218,19 +218,15 @@ class App extends Component {
           this.setState({currentAction : message});
           this.setState({player: player});
 
-          setTimeout(() => {
-              this.setState({isUsersTurn: !this.state.isUsersTurn}, () => {
-                this.startTurn();
-                this.setState({currentAction : ''});
-              });
-          }, 3000); // TODO magic number
+          this.setState({isUsersTurn: !this.state.isUsersTurn}, () => {
+            this.startTurn();
+            this.setState({currentAction : ''});
+          });
         }
-      }, 3000); // TODO magic number
       /* the time out gives the impression that the enemy is thinking
          at least that's the idea, I thought it would add to the eventual
          feel. Maybe one day, with an AI component, the enemy will start thinking,
          then god save us all!
-
       */
     }
 
@@ -278,20 +274,17 @@ class App extends Component {
 
       let playerCards;
       if(this.state.isUsersTurn){
-        playerCards = <Hand cards={this.state.hand} onUse={this.handleUseCard.bind(this)} />
+        playerCards = <Hand cards={this.state.hand} onUse={this.handleUseCard.bind(this)} />;
       } else {
-        playerCards = <p>{this.state.hand.length} in the hand, {this.state.deck.length} left in deck.</p>
+        playerCards = <p>{this.state.hand.length} in the hand, {this.state.deck.length} left in deck.</p>;
       }
       return (
         <div className="App">
           <div className="play-screen">
-            <Enemy enemy={this.state.currentEnemy}/>
-
+            <Enemy enemy={this.state.currentEnemy} />
             <Player player={this.state.player} />
             <div className="action-details">{actionMessage}</div>
-            <div className="player-cards">
-                {playerCards}
-            </div>
+            <div className="player-cards">{playerCards}</div>
           </div>
         </div>
       );

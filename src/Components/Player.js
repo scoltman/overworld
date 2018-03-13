@@ -5,7 +5,6 @@ class Player extends Component {
   render() {
     return (
       <div className="player-details">
-        <img className="player-image" src="/public/images/player.png" />
         <ul className="player-stats">
           <li className="health">
             <img src="/public/images/svg/Heart.svg" alt="Health:" className="icon" /> {this.props.player.health}

@@ -2,3 +2,4 @@ node_modules/
 **/.DS_Store
 .yarn-cache.tgz
 dist/
+yarn-error.log
